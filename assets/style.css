@@ -1,0 +1,633 @@
+/* ============================================
+   Portfolio of Muhammad Rehan Afzal - stylesheet
+   ============================================ */
+
+/* Colors and values used everywhere */
+:root {
+  --navy: #0b1220;
+  --navy-2: #16233d;
+  --blue: #2563eb;
+  --blue-dark: #1d4ed8;
+  --cyan: #06b6d4;
+  --ink: #1e293b;
+  --muted: #64748b;
+  --bg: #ffffff;
+  --bg-alt: #f1f5f9;
+  --line: #e2e8f0;
+  --radius: 16px;
+  --shadow: 0 6px 24px rgba(15, 23, 42, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+a {
+  color: var(--blue);
+}
+
+/* ---------- Main button ---------- */
+.btn-main {
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-main:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+.btn-outline-light,
+.btn-outline-dark {
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+/* ---------- Menu ---------- */
+.site-nav {
+  padding: 14px 0;
+  transition: background 0.3s, box-shadow 0.3s, padding 0.3s;
+}
+
+/* This class is added by JavaScript after the user scrolls down */
+.site-nav.scrolled {
+  background: rgba(11, 18, 32, 0.96);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  padding: 8px 0;
+}
+
+.site-nav .navbar-brand {
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+.site-nav .navbar-brand span {
+  color: var(--cyan);
+}
+
+.site-nav .nav-link {
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+.site-nav .nav-link:hover,
+.site-nav .nav-link.active {
+  color: #fff;
+}
+
+.site-nav .nav-link.active {
+  box-shadow: inset 0 -2px 0 var(--cyan);
+}
+
+.site-nav .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.site-nav .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* On small screens the opened menu needs a dark background */
+@media (max-width: 991px) {
+  .site-nav .navbar-collapse {
+    background: var(--navy);
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-top: 10px;
+  }
+}
+
+/* ---------- Home (hero) ---------- */
+.hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 60%, #1e3a8a 100%);
+  color: #fff;
+  padding: 150px 0 90px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Two soft circles for decoration */
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(6, 182, 212, 0.12);
+}
+
+.hero::before {
+  width: 420px;
+  height: 420px;
+  top: -140px;
+  right: -120px;
+}
+
+.hero::after {
+  width: 260px;
+  height: 260px;
+  bottom: -120px;
+  left: -80px;
+  background: rgba(37, 99, 235, 0.18);
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50px;
+  padding: 6px 16px;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.status-pill .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25);
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 8px;
+}
+
+.hero-title .highlight {
+  background: linear-gradient(135deg, #60a5fa, var(--cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-sub {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #cbd5e1;
+  margin-bottom: 18px;
+}
+
+.hero-text {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  max-width: 560px;
+  margin-bottom: 28px;
+}
+
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.hero-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+}
+
+.hero-links a:hover {
+  color: #fff;
+}
+
+.hero-links i {
+  color: var(--cyan);
+  margin-right: 4px;
+}
+
+/* Photo with a gradient frame behind it */
+.photo-frame {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  transform: rotate(3deg);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.photo-frame img {
+  display: block;
+  width: 320px;
+  max-width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 20px;
+  transform: rotate(-3deg) scale(1);
+}
+
+/* ---------- Sections ---------- */
+.section {
+  padding: 90px 0;
+}
+
+.section-alt {
+  background: var(--bg-alt);
+}
+
+.section-head {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-head h2 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+.eyebrow {
+  display: inline-block;
+  color: var(--blue);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 6px;
+}
+
+/* ---------- About ---------- */
+.lead-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.info-card {
+  background: var(--bg-alt);
+  border-radius: var(--radius);
+  padding: 8px 24px;
+}
+
+.info-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.info-list li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.info-list li:last-child {
+  border-bottom: none;
+}
+
+.info-list i {
+  font-size: 1.3rem;
+  color: var(--blue);
+  width: 28px;
+  text-align: center;
+}
+
+.info-list small {
+  display: block;
+  color: var(--muted);
+  line-height: 1.2;
+}
+
+/* ---------- Skills ---------- */
+.skill-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 28px;
+  height: 100%;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+}
+
+.skill-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  color: #fff;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+/* Small rounded labels used for skills and technologies */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tags span {
+  background: #eff6ff;
+  color: var(--blue-dark);
+  border: 1px solid #dbeafe;
+  border-radius: 50px;
+  padding: 3px 14px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.tags-small span {
+  font-size: 0.8rem;
+  padding: 2px 12px;
+}
+
+/* ---------- Projects ---------- */
+.project-card {
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.14);
+}
+
+.project-banner {
+  height: 150px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 4rem;
+}
+
+.banner-blue {
+  background: linear-gradient(135deg, #1e3a8a, var(--blue), var(--cyan));
+}
+
+.banner-amazon {
+  background: linear-gradient(135deg, #131921, #232f3e, #ff9900);
+}
+
+.banner-orange {
+  background: linear-gradient(135deg, #ea580c, #ff6b35, #fbbf24);
+}
+
+.project-type {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50px;
+  padding: 3px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.project-body {
+  padding: 26px;
+  flex: 1;
+}
+
+.project-where {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.project-points {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.project-points li {
+  margin-bottom: 4px;
+}
+
+/* ---------- Education ---------- */
+.edu-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 26px;
+  box-shadow: var(--shadow);
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.edu-icon {
+  flex: 0 0 60px;
+  height: 60px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  color: #fff;
+  font-size: 1.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-soft {
+  background: #eff6ff;
+  color: var(--blue-dark);
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 50px;
+}
+
+/* ---------- Contact ---------- */
+.contact-card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 26px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+  height: 100%;
+}
+
+.contact-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.contact-row:last-child {
+  border-bottom: none;
+}
+
+a.contact-row:hover strong {
+  color: var(--blue);
+}
+
+.contact-row i {
+  flex: 0 0 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #eff6ff;
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.contact-row small {
+  display: block;
+  color: var(--muted);
+  line-height: 1.2;
+}
+
+/* ---------- Pop-up windows ---------- */
+.role-box {
+  background: var(--bg-alt);
+  border-radius: 12px;
+  padding: 16px;
+  height: 100%;
+}
+
+.role-box h6 {
+  color: var(--blue-dark);
+}
+
+.role-box ul {
+  padding-left: 18px;
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--navy);
+  color: #94a3b8;
+  padding: 26px 0;
+  font-size: 0.9rem;
+}
+
+/* ---------- Back to top button ---------- */
+#toTop {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  color: #fff;
+  font-size: 1.2rem;
+  display: none;
+  z-index: 999;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- Appear animation ----------
+   Elements with class "reveal" start hidden and slide up when they come into view.
+   The "js" class is added by JavaScript, so without JavaScript everything stays visible. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s, transform 0.7s;
+}
+
+.js .reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 991px) {
+  .hero {
+    padding: 120px 0 70px;
+    text-align: center;
+  }
+
+  .hero-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero .d-flex,
+  .hero-links {
+    justify-content: center;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .photo-frame img {
+    width: 260px;
+    height: 320px;
+  }
+}
+
+@media (max-width: 575px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .hero-title {
+    font-size: 1.9rem;
+  }
+
+  .hero-sub {
+    font-size: 1.15rem;
+  }
+
+  .section-head h2 {
+    font-size: 1.8rem;
+  }
+
+  .edu-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* People who turned off animations in their system settings */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
